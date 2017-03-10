@@ -1,36 +1,59 @@
-size(720, 480);
-smooth();
-strokeWeight(2);
-ellipseMode(RADIUS);
+//erase is left arrow, erase after a shape is drawn
+// draw a sqaure is up arrow
+// draw a circle is down arrow 
+//you can chane the color of the circle with mosue click from black to the orginal color
+// draw a traingle is right arrow
 
-//Neck
-stroke(102);              // Set stroke to gray
-line(266, 257, 266, 162); // Left
-line(276, 257, 276, 162); // Middle
-line(286, 257, 286, 162); // Right
 
-// Antennae
-line(276, 155, 246, 112); // Small
-line(276, 155, 306, 56);  // Tall
-line(276, 155, 342, 170); // Medium
 
-// Body
-noStroke();               // Disable stroke  
-fill(102);                // Set to gray
-ellipse(264, 377, 33, 33);// Antigravity Orb 
-fill(0);                  // Set to black
-rect(219, 257, 90, 120);  // Main body
-fill(102);                // Set medium gray
-rect(219, 274, 90, 6);    // Gray stripe
 
-// Head
-fill(0);                  // Set to black
-ellipse(276, 155, 45, 45);// Head
-fill(255);                // Set to white
-ellipse(288, 150, 14, 14);// Large eye
-fill(0);                  // Set to black
-ellipse(288, 150, 3, 3);  // Pupil
-fill(153);                // Set to gray
-ellipse(263, 148, 5, 5);  // Small eye 1
-ellipse(296, 130, 4, 4);  // Small eye 2
-ellipse(305, 162, 3, 3);  // Small eye 3
+color c=color(random(255),random(255),random(255)); 
+int value = c ;
+ 
+
+void setup(){
+background(255); noStroke();}
+
+
+void draw() {
+ 
+  if (key == CODED) {
+    if (keyCode == UP) {
+   fill(#4DFF08);  rect(25,25,50,50); //DRAWS SQAURE
+    } else if (keyCode == DOWN) {
+    fill(value);   ellipse(50,50,75,75); //DRAWS COLORED CIRCLE
+    } }
+  if(key == CODED){
+    
+
+    if (keyCode == LEFT){
+      fill(255);  ellipse(50,50,90,90); } // DRAWS LARGE WHTIE CIRCLE TO ERASE
+   else if (keyCode == RIGHT) { 
+ fill(#FF03E6); triangle(24,69,52,14,80,69); } // DRAWS TRIANGLE
+ }
+ if (key == CODED) {
+    if (keyCode == SHIFT) {
+   fill(#052CFF);  quad(24,69,52,14,80,69,36,50); // DRAWS QUAD 
+;
+    } else if (keyCode == ENTER) {
+    
+    } }
+  
+  }
+
+
+void mouseClicked() {
+  if (value == 0) { // CHANGES THE COLOR OF THE CIRCLE WHEN CLICKED ON FROM BLACK TO THE PRESLECETED RANDOM COLOR 
+    value = c;
+  } else {
+    value = 0;
+  
+
+
+
+}
+
+
+}
+
+
